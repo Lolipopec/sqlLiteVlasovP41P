@@ -144,7 +144,7 @@ public void UpdateTable ()
                         }
                         realID++;
                     } while (cursorUpdater.moveToNext());
-                    if (cursorUpdater.moveToLast()) {
+                    if  (cursorUpdater.moveToLast() && v.getId()!=realID){
                         database.delete(dbHelper.TABLE_MENU, DBHelper.KEY_ID + " = ?", new String[]{cursorUpdater.getString(idIndex)});
                     }
                     UpdateTable();
