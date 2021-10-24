@@ -6,16 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tvBasket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="12pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etDish"
+        android:id="@+id/etProduct"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:hint="Dish"
+        android:hint="Product"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></EditText>
-
+        app:layout_constraintTop_toBottomOf="@+id/tvBasket"></EditText>
 
     <EditText
         android:id="@+id/etPrice"
@@ -23,19 +31,12 @@
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:hint="Price"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDish"></EditText>
-    <EditText
-        android:id="@+id/etComposition"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:hint="composition"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPrice"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/etProduct"></EditText>
+
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="0dp"
@@ -43,7 +44,8 @@
         android:text="Add"
         app:layout_constraintEnd_toStartOf="@+id/btnClear"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etComposition"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/etPrice"></Button>
+
 
     <Button
         android:id="@+id/btnClear"
@@ -53,8 +55,7 @@
         android:text="Clear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnAdd"
-        app:layout_constraintTop_toBottomOf="@+id/etComposition"></Button>
-
+        app:layout_constraintTop_toBottomOf="@+id/etPrice"></Button>
 
     <TableLayout
         android:id="@+id/dpOutput"
@@ -86,6 +87,4 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </TableLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
