@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     SQLiteDatabase database;
     ContentValues contentValues;
     DBHelper dbHelper;
-    TextView tvBasket;
+    TextView tvBasket,tvBasket2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         etPrice = (EditText) findViewById(R.id.etPrice);
         tvBasket = (TextView) findViewById(R.id.tvBasket);
         tvBasket.setOnClickListener(this);
+        tvBasket2 = (TextView) findViewById(R.id.tvBasket2);
+        tvBasket2.setOnClickListener(this);
         dbHelper = new DBHelper(this);
         database = dbHelper.getWritableDatabase();
         UpdateTable();
@@ -105,6 +107,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "Сумма "+tvBasket.getText(), Toast.LENGTH_SHORT);
                 toast.show();
+                tvBasket.setText("0");
+                break;
+            case R.id.tvBasket2:
+                Toast toast1 = Toast.makeText(getApplicationContext(),
+                        "Сумма "+tvBasket.getText(), Toast.LENGTH_SHORT);
+                toast1.show();
                 tvBasket.setText("0");
                 break;
             case R.id.btnAdd:
